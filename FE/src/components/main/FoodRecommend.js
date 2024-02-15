@@ -93,13 +93,13 @@ function FoodRecommend() {
       />
 
       {modalVisible && (
-        <div className="modal-overlay" onClick={handleModalClick}>
-          <div className="modal-content" style={modalContentStyle}>
+        <div className={styles.modaloverlay} onClick={handleModalClick}>
+          <div className={styles.modalcontent}>
             <span onClick={closeModal} style={closeButtonStyle}>
               &times;
             </span>
-            <div>오늘의 음식 추천</div>
-            <section className="container">
+            <div className={styles.today}>오늘의 음식 추천</div>
+            <section className={styles.textareat}>
               {/* <div className="top-area">
                 <div className="profile-area"></div>
               </div> */}
@@ -112,7 +112,7 @@ function FoodRecommend() {
                 식단추천
               </button> */}
 
-              <div className="chat-area" style={modal}>
+              <div className={styles.textarea}>
                 {conversation.length > 0 && (
                   <div className={conversation[conversation.length - 1].role}>
                     {conversation[conversation.length - 1].content}
@@ -173,17 +173,4 @@ const closeButtonStyle = {
   cursor: 'pointer',
 };
 
-const buttonStyle = {
-  padding: '5px',
-  fontSize: '16px',
-  backgroundColor: 'black',
-  color: 'white',
-  border: 'none',
-  borderRadius: '10px',
-  cursor: 'pointer',
-};
-
-const modal = {
-  height: '200px',
-};
 export default FoodRecommend;
