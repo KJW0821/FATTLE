@@ -55,7 +55,9 @@ function FoodRecommend() {
         {
           // 헤더에 API 키 추가
           headers: {
-            Authorization: process.env.REACT_APP_GPT_API_KEY,
+            // Authorization: process.env.REACT_APP_GPT_API_KEY,
+            Authorization:
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         },
