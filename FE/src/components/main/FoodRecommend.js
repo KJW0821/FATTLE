@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import recommendicon from '../../assets/images/main/recommendicon.svg';
 import recommendtext from '../../assets/images/main/recommendtext.svg';
+import styles from '../../styles/main/FoodRecommend.module.css';
 
 function FoodRecommend() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -84,7 +85,10 @@ function FoodRecommend() {
       <img
         src={recommendicon}
         alt="Click to open modal"
-        onClick={openModal}
+        onClick={() => {
+          openModal();
+          handleDietRecommendation();
+        }}
         style={{ cursor: 'pointer', ...iconImageStyle }}
       />
 
@@ -94,23 +98,21 @@ function FoodRecommend() {
             <span onClick={closeModal} style={closeButtonStyle}>
               &times;
             </span>
-
+            <div>오늘의 음식 추천</div>
             <section className="container">
-              <div className="top-area">
-                <div className="profile-area">
-                  <span>식단</span>
-                </div>
-              </div>
+              {/* <div className="top-area">
+                <div className="profile-area"></div>
+              </div> */}
 
-              <button
+              {/* <button
                 className="diet-recommendation-button"
                 onClick={handleDietRecommendation}
                 style={buttonStyle}
               >
-                추천
-              </button>
+                식단추천
+              </button> */}
 
-              <div className="chat-area">
+              <div className="chat-area" style={modal}>
                 {conversation.length > 0 && (
                   <div className={conversation[conversation.length - 1].role}>
                     {conversation[conversation.length - 1].content}
@@ -151,12 +153,12 @@ const iconImageStyle = {
 
 const modalContentStyle = {
   backgroundColor: 'white',
-  padding: '20px',
+  padding: '10px',
   borderRadius: '10px',
   boxShadow: '0 0 10px rgba(0, 0, 0, 0.5)',
   position: 'absolute',
   top: '50%',
-  left: '50%',
+  left: '0%',
   transform: 'translate(-50%, -50%)',
   width: '400px',
   height: '500px',
@@ -179,5 +181,9 @@ const buttonStyle = {
   border: 'none',
   borderRadius: '10px',
   cursor: 'pointer',
+};
+
+const modal = {
+  height: '200px',
 };
 export default FoodRecommend;
