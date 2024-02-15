@@ -43,7 +43,7 @@ function FoodRecommend() {
           messages: [
             {
               role: 'user',
-              content: `오늘 탄수화물 200g, 단백질 13g, 지방 40g을 먹었어. 오늘 먹을 음식 추천해줘(부가적인 설명은 제외하고 음식만 알려줘)`,
+              content: `건강식 5개 이름만`,
               // '건강하고 든든한 요리 아무거나 추천해는데 대답은 "오늘의 추천 음식은 {음식이름} 입니다. {}kcal 탄수화물{}g, 단백질{}g, 지방{}g" 이렇게 한 문장으로만 답해줘 ',
             },
             {
@@ -55,7 +55,9 @@ function FoodRecommend() {
         {
           // 헤더에 API 키 추가
           headers: {
-            Authorization: process.env.REACT_APP_GPT_API_KEY,
+            // Authorization: process.env.REACT_APP_GPT_API_KEY,
+            Authorization:
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         },
