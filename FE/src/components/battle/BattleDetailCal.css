@@ -1,0 +1,123 @@
+ul {
+  list-style: none;
+}
+div,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  margin-top: 100px;
+  background-color: #fffc9b;
+  width: 388px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  height: 487px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 그래프 */
+.graphWrap {
+  position: relative;
+  background-color: #ffffff;
+  width: 360px;
+  height: 450px;
+  margin: 20px;
+  /* border: 1px solid #aaa; */
+  border-radius: 20px;
+}
+.graph {
+  position: absolute;
+  bottom: 50px;
+  width: 25px;
+}
+
+.compareTitle {
+  /* text-align: center;  */
+  margin: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f4efef;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.graph .label1 {
+  text-align: center;
+  margin-left: 50px;
+  position: absolute;
+}
+
+.graph .label2 {
+  text-align: center;
+  margin-left: 150px;
+  position: absolute;
+}
+
+.graph .label3 {
+  text-align: center;
+  margin-left: 250px;
+  position: absolute;
+}
+
+.graph-item {
+  width: 100%;
+  border-radius: 50px;
+  position: absolute;
+  bottom: 0;
+  background: #ddd;
+}
+.graph-item.skyblue {
+  background: #00a6da;
+}
+.graph-item.lime {
+  background: #00a911;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.circle1 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00a6da;
+  margin: 0 10px;
+}
+
+.circle2 {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #00a911;
+  margin: 0 10px;
+}
+
+/* 애니메이션 */
+.graph-item.p-100 {
+  animation: p-100 2s;
+}
+.graph-item.p-50 {
+  animation: p-50 2s;
+}
+
+@keyframes p-100 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 300px;
+  }
+}
+@keyframes p-50 {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 150px;
+  }
+}

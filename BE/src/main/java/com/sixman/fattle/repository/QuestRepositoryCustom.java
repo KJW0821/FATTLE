@@ -18,5 +18,5 @@ public interface QuestRepositoryCustom {
     void foodRecord(FoodUploadRequest request);
 
     void exerciseRecord(QuestRequest request);
-
+    
 }
